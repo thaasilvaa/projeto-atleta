@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SportClub | Gestão de Atletas</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">S</div>
+
+            <div>
+                <strong>SPORT</strong>
+                <span>CLUB</span>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="#inicio" class="menu ativo">
+                <span>⌂</span>
+                Início
+            </a>
+
+            <a href="#cadastro" class="menu">
+                <span>＋</span>
+                Cadastrar atleta
+            </a>
+
+            <a href="#modalidades" class="menu">
+                <span>◉</span>
+                Modalidades
+            </a>
+
+            <a href="#atletas" class="menu">
+                <span>♙</span>
+                Atletas
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="bola">⚽</div>
+
+            <div>
+                <strong>Clube Esportivo</strong>
+                <small>Gestão de atletas</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="main">
+
+        <!-- TOPO -->
+
+        <header class="topbar">
+
+            <div>
+                <span class="saudacao">PAINEL DE CONTROLE</span>
+                <h1>Gestão de Atletas</h1>
+            </div>
+
+            <button
+                class="btn-principal"
+                onclick="document.getElementById('cadastro').scrollIntoView({behavior:'smooth'})"
+            >
+                + Novo atleta
+            </button>
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-text">
+
+                <span class="tag">SPORTCLUB • 2026</span>
+
+                <h2>
+                    Talentos que fazem<br>
+                    <strong>a diferença.</strong>
+                </h2>
+
+                <p>
+                    Gerencie os atletas, modalidades e informações
+                    do seu clube esportivo em um único lugar.
+                </p>
+
+                <button
+                    onclick="document.getElementById('modalidades').scrollIntoView({behavior:'smooth'})"
+                >
+                    Ver modalidades →
+                </button>
+
+            </div>
+
+            <div class="hero-icon">
+                🏆
+            </div>
+
+        </section>
+
+
+        <!-- ESTATÍSTICAS -->
+
+        <section class="estatisticas">
+
+            <div class="stat-card">
+
+                <div class="stat-icon azul">
+                    ♙
+                </div>
+
+                <div>
+                    <span>Total de atletas</span>
+                    <strong id="totalAtletas">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon verde">
+                    ⚽
+                </div>
+
+                <div>
+                    <span>Futebol</span>
+                    <strong id="totalFutebol">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon laranja">
+                    🏀
+                </div>
+
+                <div>
+                    <span>Basquete</span>
+                    <strong id="totalBasquete">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon roxo">
+                    🏊
+                </div>
+
+                <div>
+                    <span>Natação</span>
+                    <strong id="totalNatacao">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon vermelho">
+                    🏃
+                </div>
+
+                <div>
+                    <span>Atletismo</span>
+                    <strong id="totalAtletismo">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CADASTRO -->
+
+        <section class="cadastro-section" id="cadastro">
+
+            <div class="section-title">
+
+                <div>
+                    <span>GERENCIAMENTO</span>
+                    <h2>Cadastrar atleta</h2>
+                </div>
+
+                <p>
+                    Preencha os dados abaixo para adicionar
+                    um novo atleta ao clube.
+                </p>
+
+            </div>
+
+
+            <form id="formAtleta">
+
+                <input type="hidden" id="id">
+
+                <div class="campo">
+
+                    <label for="nome">
+                        Nome do atleta
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Ex: Gabriel Silva"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="modalidade">
+                        Modalidade
+                    </label>
+
+                    <select id="modalidade" required>
+
+                        <option value="">
+                            Selecione uma modalidade
+                        </option>
+
+                        <option value="Futebol">
+                            ⚽ Futebol
+                        </option>
+
+                        <option value="Basquete">
+                            🏀 Basquete
+                        </option>
+
+                        <option value="Natação">
+                            🏊 Natação
+                        </option>
+
+                        <option value="Atletismo">
+                            🏃 Atletismo
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="idade">
+                        Idade
+                    </label>
+
+                    <input
+                        type="number"
+                        id="idade"
+                        min="1"
+                        placeholder="Ex: 20"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="salarioMensal">
+                        Salário mensal
+                    </label>
+
+                    <input
+                        type="number"
+                        id="salarioMensal"
+                        min="0"
+                        step="0.01"
+                        placeholder="Ex: 3500.00"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="btn-salvar"
+                    >
+                        <span id="textoBotao">
+                            Cadastrar atleta
+                        </span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-limpar"
+                        onclick="limpar()"
+                    >
+                        Limpar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- MODALIDADES -->
+
+        <section id="modalidades">
+
+            <div class="section-title">
+
+                <div>
+                    <span>ELENCO</span>
+                    <h2>Atletas por modalidade</h2>
+                </div>
+
+                <p>
+                    Confira os atletas separados por
+                    sua modalidade esportiva.
+                </p>
+
+            </div>
+
+
+            <!-- FUTEBOL -->
+
+            <div class="modalidade-box futebol">
+
+                <div class="modalidade-header">
+
+                    <div class="modalidade-info">
+
+                        <div class="modalidade-icon">
+                            ⚽
+                        </div>
+
+                        <div>
+                            <h3>Futebol</h3>
+                            <span>
+                                Categoria • Futebol
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="contador"
+                        id="contadorFutebol"
+                    >
+                        0 atletas
+                    </div>
+
+                </div>
+
+                <div
+                    class="atletas-grid"
+                    id="listaFutebol"
+                >
+                </div>
+
+            </div>
+
+
+            <!-- BASQUETE -->
+
+            <div class="modalidade-box basquete">
+
+                <div class="modalidade-header">
+
+                    <div class="modalidade-info">
+
+                        <div class="modalidade-icon">
+                            🏀
+                        </div>
+
+                        <div>
+                            <h3>Basquete</h3>
+                            <span>
+                                Categoria • Basquete
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="contador"
+                        id="contadorBasquete"
+                    >
+                        0 atletas
+                    </div>
+
+                </div>
+
+                <div
+                    class="atletas-grid"
+                    id="listaBasquete"
+                >
+                </div>
+
+            </div>
+
+
+            <!-- NATAÇÃO -->
+
+            <div class="modalidade-box natacao">
+
+                <div class="modalidade-header">
+
+                    <div class="modalidade-info">
+
+                        <div class="modalidade-icon">
+                            🏊
+                        </div>
+
+                        <div>
+                            <h3>Natação</h3>
+                            <span>
+                                Categoria • Natação
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="contador"
+                        id="contadorNatacao"
+                    >
+                        0 atletas
+                    </div>
+
+                </div>
+
+                <div
+                    class="atletas-grid"
+                    id="listaNatacao"
+                >
+                </div>
+
+            </div>
+
+
+            <!-- ATLETISMO -->
+
+            <div class="modalidade-box atletismo">
+
+                <div class="modalidade-header">
+
+                    <div class="modalidade-info">
+
+                        <div class="modalidade-icon">
+                            🏃
+                        </div>
+
+                        <div>
+                            <h3>Atletismo</h3>
+                            <span>
+                                Categoria • Atletismo
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="contador"
+                        id="contadorAtletismo"
+                    >
+                        0 atletas
+                    </div>
+
+                </div>
+
+                <div
+                    class="atletas-grid"
+                    id="listaAtletismo"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TABELA -->
+
+        <section id="atletas" class="tabela-section">
+
+            <div class="section-title">
+
+                <div>
+                    <span>ADMINISTRAÇÃO</span>
+                    <h2>Todos os atletas</h2>
+                </div>
+
+                <input
+                    type="search"
+                    id="pesquisa"
+                    placeholder="🔎  Buscar atleta..."
+                >
+
+            </div>
+
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Atleta</th>
+                            <th>Modalidade</th>
+                            <th>Idade</th>
+                            <th>Salário</th>
+                            <th>Ações</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="lista">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <strong>SPORTCLUB</strong>
+
+            <span>
+                Sistema de gerenciamento de atletas
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
